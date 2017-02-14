@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0 user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>泰诺活动上传页</title>
+<style>
+html,body{
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+}
+body{
+	background-image:url(__PUBLIC__/img/5.png);
+	background-size:cover;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
+	select:focus,
+	textarea:focus,
+	input:focus {
+		font-size: 16px !important;
+	}
+}
+textarea{
+    resize: none;
+}
+.header{
+	width:100%;
+	height:auto;
+	padding-top:1rem;
+	padding-left:1rem;
+}
+.header img{
+	max-width:60%;
+}
+#center{
+	width:100%;
+	height:auto;
+	margin-top:1rem;
+	padding-top:1rem;
+}
+.js_showBox{
+	width:100px;
+	height:100px;
+	border:2px solid white;
+	margin:0 auto;
+}
+.js_showBox img{
+	width:100px;
+	height:100px;
+}
+.btn-upload{
+	width:150px;
+	margin:0 auto;
+	margin-top:1rem;
+}
+/*a  upload */
+.a-upload {
+    padding: 4px 10px;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #888;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+	text-decoration:none;
+}
+
+.a-upload  input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+	
+}
+
+.a-upload:hover {
+    color: #444;
+    background: #eee;
+    border-color: #ccc;
+    text-decoration: none;
+}
+/*a  upload */
+.story{
+	margin-top:1rem;
+	width:100%;
+	height:auto;
+	text-align:center;
+	color:white;
+	font-size:1.8rem;
+	font-weight:20px;
+	background-image:url(__PUBLIC__/img/2.png);
+	background-position:center center;
+	background-size:250px 80px;
+	background-repeat:no-repeat;
+	line-height:80px;	
+}
+.storytext{
+	width:100%;
+	height:100px;
+}
+.redtext{
+	widows:100%;
+	height:auto;
+	margin-top:5px;
+	text-align:center;
+}
+.tijiao{
+	border: 1px solid; border-color: #EEE #CCC #CCC #EEE;
+	color:#FFF;
+	background:#09F;
+	width:50px;
+	height:25px;
+	margin-right:1rem;
+}
+.quxiao{
+	border: 1px solid; border-color: #EEE #CCC #CCC #EEE;
+	color:#FFF;
+	background:#F00;
+	width:50px;
+	height:25px;
+}
+.register{
+	width:100%;
+	margin-top:3px;
+    vertical-align:middle;
+    text-align: center;
+}
+.register1{
+	width:300px;
+/*	border:1px solid black;*/
+    display:inline-block;
+	position:relative;
+}
+.register1 p{
+	width:100%;
+	height:30px;
+}
+.input1{
+	width:180px;
+	line-height:20px;
+	background-color:#950303;
+	border:1px solid #950303;
+	border-radius:4px;
+	margin-left:1rem;
+	color:white;
+	outline:none;
+}
+.input2{
+	width:50px;
+	height:27px;
+	background-color:#950303;
+	border:1px solid #950303;
+	border-radius:20px;
+	color:white;
+	margin-left:35px;
+	outline:none;
+}
+.p-re span{
+	font-size:1.1rem;
+	color:white;
+	display:inline-block;
+  	vertical-align:middle;
+}
+.yinsi{
+	width:60px;
+	position:absolute;
+	top:85px;
+	right:25px;
+}
+.yinsi a{
+	color:white;
+	font-size:0.8rem;
+	}
+</style>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.cookie.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/js/jquery.uploadView.js"></script><!--必须在jquery之后插入-->
+<script type="text/javascript" src="__PUBLIC__/layer_mobile/layer.js"></script><!--必须在jquery之后插入-->
+</head>
+
+<body>
+<form action="{:U('Indexer/add')}" method="post" name="form" id="myform" enctype="multipart/form-data">
+<input  type="hidden" name="gushi" id="gushi" value="">
+<div class="header">
+	<img src="__PUBLIC__/img/1.png">
+</div>
+<div class="control-group js_uploadBox" id="center">
+	<div class="js_showBox"><img class="js_logoBox" src="__PUBLIC__/img/6.png" id="myimg"></div>
+    <div class="btn-upload">
+      	<a href="javascript:;" class="a-upload">
+    		<input class="js_upFile" type="file" name="cover">点击这里上传照片
+		</a>
+    </div>   
+</div>
+<div class="story" onClick="menuSH()">
+	写下你的故事...
+</div>
+<div class="redtext">
+	<img src="__PUBLIC__/img/wenzi.png" style="max-width:85%;">
+</div>
+<div class="register">
+	<div class="register1">
+    	
+            <p align="center" class="p-re"><span>姓名:</span><input type="text" class="input1" name="name" id="name"/></p>
+            <p align="center" class="p-re"><span>电话:</span><input type="text" class="input1" id="phone" name="phone"/></p>
+            <p align="center" class="submittj"><input type="submit" name="submit" class="input2" value="提交" /></p>
+        </form>
+        <div class="yinsi"><a href="{:U('indexsan/indexsan')}">隐私条款</a></div>
+    </div>
+</div>
+<script>
+$(".js_upFile").uploadView({
+	uploadBox: '.js_uploadBox',//设置上传框容器
+	showBox : '.js_showBox',//设置显示预览图片的容器
+	width : 100, //预览图片的宽度，单位px
+	height : 100, //预览图片的高度，单位px
+	allowType: ["gif", "jpeg", "jpg", "bmp", "png"], //允许上传图片的类型
+	maxSize :10, //允许上传图片的最大尺寸，单位M
+	success:function(e){
+//		$(".js_uploadText").text('更改');
+//		alert('图片上传成功');
+      
+       
+		layer.open({
+			content: '图片上传成功'
+			,skin: 'msg'
+			,time: 1 //2秒后自动关闭
+		  });
+		  
+		  
+	}
+});
+</script>
+<script src="__PUBLIC__/style/Jquery-1.7.2.min.js"></script>
+<script>
+function menuSH(){
+
+    
+	var co=getCookie('con');
+	if(co!=''){
+	   var content = '<form action="#" method="post" name="story"><textarea class="storytext" id="stextarea"/>'+co+'</textarea></form>';
+	}else{
+	   var content = '<form action="#" method="post" name="story"><textarea class="storytext" id="stextarea"/></textarea></form>';
+	}
+	
+	
+	
+	layer.open({
+			style: 'border:1 solid white;',
+			content:content,
+			btn: ['提交','取消'],
+    		yes: function(index){
+			var mark = document.getElementById("stextarea").value;
+			            
+			           Setcookie('con',mark);
+      					
+						if(mark==""){
+									layer.open({
+										content: '内容不能为空',
+										skin: 'msg',
+										time: 1
+									})
+								}else{
+									document.getElementById('gushi').value=mark;   		
+									
+									layer.close(index);																			
+							}	
+							
+							
+												
+				},
+			no:function(){
+			       var mark = document.getElementById("stextarea").value;
+			            
+			           Setcookie('con',mark);
+			
+			}
+				
+		  });		  
+}
+
+
+function Setcookie (name, value)
+
+{ 
+
+    //设置名称为name,值为value的Cookie
+    var expdate = new Date();   //初始化时间
+    expdate.setTime(expdate.getTime() + 30 * 60 * 1000);   //时间
+    document.cookie = name+"="+value+";expires="+expdate.toGMTString()+";path=/";
+
+   //即document.cookie= name+"="+value+";path=/";   时间可以不要，但路径(path)必须要填写，因为JS的默认路径是当前页，如果不填，此cookie只在当前页面生效！~
+}
+
+
+function getCookie(c_name)
+{
+if (document.cookie.length>0)
+  {
+  c_start=document.cookie.indexOf(c_name + "=")
+  if (c_start!=-1)
+    {
+    c_start=c_start + c_name.length+1
+    c_end=document.cookie.indexOf(";",c_start)
+    if (c_end==-1) c_end=document.cookie.length
+    return unescape(document.cookie.substring(c_start,c_end))
+    }
+  }
+return ""
+}
+</script>
+
+<script type="text/javascript">
+  function $(id) {
+    return document.getElementById(id);
+  }
+  window.onload = function () {
+    $("myform").onsubmit = function(e) {
+      e = e || window.event;
+      var target = e.target || e.srcElement
+          nameInput = target.name,
+          phoneInput = target.phone;
+      if(!/^[\u4e00-\u9fa5]{2,4}$/.test(nameInput.value)) {
+		layer.open({
+			  style: 'background-color:rgba(0,0,0,0.8); color:white; font-size:13px;',
+			  content:'姓名不能为空,姓名汉字组成,且长度在2到4位'
+		})
+        return false;
+      }
+      if(!/^1([38]\d|4[57]|5[0-35-9]|7[06-8]|8[89])\d{8}$/.test(phoneInput.value)) {
+		layer.open({
+			  style: 'background-color:rgba(0,0,0,0.8); color:white; font-size:13px;',
+			  content:'手机号不正确'
+		})
+        return false;
+      }
+	  layer.open({
+				content: '您的请求已接受！',
+				skin: 'msg',
+				time: 2,
+				layer.close(index);
+			})
+    };
+  }
+
+</script>
+</body>
+</html>

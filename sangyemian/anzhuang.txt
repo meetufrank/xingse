@@ -1,0 +1,9 @@
+1.sql.sql文件导入到数据库中。
+
+2.将文件App/Common/Conf/config_bak.php 重命名为config.php文件
+
+3.在config.php文件填写数据库配置信息
+
+4.后台地址  http://localhost:8080/tpdemo/index.php/Qwadmin/login/index.html
+
+5.用户名admin  密码admin
