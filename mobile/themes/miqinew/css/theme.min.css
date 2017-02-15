@@ -2057,7 +2057,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 	height: 100%;
 	top: 0;
 	left: 0;
-	background-color: #fff;
+	background-color:white;
 	-webkit-transition: all 0.5s;
 	-o-transition: all 0.5s;
 	transition: all 0.5s
@@ -5027,7 +5027,6 @@ img.mfp-img {
 	-webkit-transition: all 0.3s;
 	-o-transition: all 0.3s;
 	transition: all 0.3s;
-	font-weight: bold;
 }
 .nav-tabs>li>a:hover, .nav-tabs>li>a:focus {
 	text-decoration: none;
@@ -5817,7 +5816,7 @@ img.mfp-img {
 	min-height:30px;
 }
 .mobile-cart-group-text{
-	font-size:14px;
+	font-size:16px;
 	font-weight:bold;
 	margin-left:20px;
 	margin-bottom:5px;

@@ -67,7 +67,7 @@ $input->SetNotify_url("http://meetuuu.com/mobile/weixin/example/notify.php");
 $input->SetTrade_type("JSAPI");
 $input->SetProduct_id("$goods_sn");
 $input->SetOpenid($openId);
-print_r($order);
+//print_r($order);
 $order = WxPayApi::unifiedOrder($input);
 
 $jsApiParameters = $tools->GetJsApiParameters($order);

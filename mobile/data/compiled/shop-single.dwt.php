@@ -334,10 +334,10 @@
   
     <section class="hero-slider">
       <div class="inner">
-        <?php $_from = $this->_var['xiangce']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'xiangce_0_66756400_1487044329');if (count($_from)):
-    foreach ($_from AS $this->_var['xiangce_0_66756400_1487044329']):
+        <?php $_from = $this->_var['xiangce']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'xiangce_0_99785800_1487069256');if (count($_from)):
+    foreach ($_from AS $this->_var['xiangce_0_99785800_1487069256']):
 ?>
-            <div class="slide pc-thumbnail" style="background-image:url(../<?php echo $this->_var['xiangce_0_66756400_1487044329']['img_url']; ?>);"></div>
+            <div class="slide pc-thumbnail" style="background-image:url(../<?php echo $this->_var['xiangce_0_99785800_1487069256']['img_url']; ?>);"></div>
         <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
       </div>
 
@@ -462,10 +462,10 @@ if ($this->_foreach['name']['total'] > 0):
     foreach ($_from AS $this->_var['spec_key'] => $this->_var['spec']):
         $this->_foreach['name']['iteration']++;
 ?>
-              <input type="hidden" name="spec_<?php echo $this->_var['spec_key']; ?>" value="<?php echo $this->_var['checked_arr'][($this->_foreach['name']['iteration'] - 1)]; ?>" >
-                  <p class="mobile-cart-group-text"><?php echo $this->_var['spec']['name']; ?></p>
-                  <div class="mobile-cart-group type_arr">
-                      <ul class="mobile-cart-group-select" id="mobile-groupbox">
+              <input type="hidden" name="spec_<?php echo $this->_var['spec_key']; ?>" value="<?php echo $this->_var['checked_arr'][($this->_foreach['name']['iteration'] - 1)]; ?>" class="mobile_input">
+                  <p class="mobile-cart-group-text mobile_name"><?php echo $this->_var['spec']['name']; ?></p>
+                  <div class="mobile-cart-group type_arr mobile_div">
+                      <ul class="mobile-cart-group-select mobile_li" id="mobile-groupbox">
                           <?php $_from = $this->_var['spec']['values']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'value');if (count($_from)):
     foreach ($_from AS $this->_var['key'] => $this->_var['value']):
 ?>
@@ -492,20 +492,28 @@ if ($this->_foreach['name']['total'] > 0):
           </form>
 
     </section>
+    <script type="text/javascript">
+
+  if($(".mobile_input").length<=1&&$(".mobile_li").length<=1){
+
+    $('.mobile_name').remove();
+    $('.mobile_div').remove();
+  }
+</script>
     <div class="clear"></div>
   
     <section class="container padding-top">
     <div class="row">
        <div class="artist-lf col-lg-6 col-md-6 col-sm-6">
             
-           <?php $_from = $this->_var['spysj']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'spysj_0_67643900_1487044329');if (count($_from)):
-    foreach ($_from AS $this->_var['spysj_0_67643900_1487044329']):
+           <?php $_from = $this->_var['spysj']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'spysj_0_00337100_1487069257');if (count($_from)):
+    foreach ($_from AS $this->_var['spysj_0_00337100_1487069257']):
 ?>
                  <p>
-                  <img src="<?php echo $this->_var['spysj_0_67643900_1487044329']['hav_logo']; ?>" style="width:80px;height:80px;border:1px solid transparent;border-radius:50px; float:left;">
-                  <span style="margin-top:20px;margin-left:15px; margin-right:15px;display:inline-block; font-size:16px; font-weight:blod;"><?php echo $this->_var['spysj_0_67643900_1487044329']['user_name']; ?></span>
+                  <img src="<?php echo $this->_var['spysj_0_00337100_1487069257']['hav_logo']; ?>" style="width:80px;height:80px;border:1px solid transparent;border-radius:50px; float:left;">
+                  <span style="margin-top:20px;margin-left:15px; margin-right:15px;display:inline-block; font-size:16px; font-weight:blod;"><?php echo $this->_var['spysj_0_00337100_1487069257']['user_name']; ?></span>
                   <img src="<?php echo $this->_var['ectouch_themes']; ?>/img/shugang.png" style="display:inline-block; width:1px; height:30px;">
-                  <span style="margin-top:15px;margin-left:15px;display:inline-block;font-size:16px; font-weight:bloder;"><?php echo $this->_var['spysj_0_67643900_1487044329']['country']; ?></span>
+                  <span style="margin-top:15px;margin-left:15px;display:inline-block;font-size:16px; font-weight:bloder;"><?php echo $this->_var['spysj_0_00337100_1487069257']['country']; ?></span>
                 </p>
           <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
        </div>
@@ -515,8 +523,8 @@ if ($this->_foreach['name']['total'] > 0):
     <section class="container">
       
       <ul class="nav-tabs text-center" role="tablist">
-        <li class="active"><a href="#description" role="tab" data-toggle="tab">产品介绍</a></li>
-        <li><a href="#additional" role="tab" data-toggle="tab">商品规格</a></li>
+        <li class="active"><a href="#description" role="tab" data-toggle="tab" style="font-size:16px">产品介绍</a></li>
+        <li><a href="#additional" role="tab" data-toggle="tab" style="font-size:16px">商品规格</a></li>
       </ul>
       
       <div class="tab-content">
@@ -524,10 +532,10 @@ if ($this->_foreach['name']['total'] > 0):
           <div class="row space-top">
             <div class="space-bottom" id="xiangqiangimg">
                 
-                <?php $_from = $this->_var['goodsdesc']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'goodsdesc_0_67752800_1487044329');if (count($_from)):
-    foreach ($_from AS $this->_var['goodsdesc_0_67752800_1487044329']):
+                <?php $_from = $this->_var['goodsdesc']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'goodsdesc_0_00375300_1487069257');if (count($_from)):
+    foreach ($_from AS $this->_var['goodsdesc_0_00375300_1487069257']):
 ?>
-                   <?php echo $this->_var['goodsdesc_0_67752800_1487044329']['goods_desc']; ?>
+                   <?php echo $this->_var['goodsdesc_0_00375300_1487069257']['goods_desc']; ?>
                 <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
             </div>
           </div>
@@ -538,12 +546,12 @@ if ($this->_foreach['name']['total'] > 0):
 
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <table class="table-no-border">
-                                <?php $_from = $this->_var['spguige']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'spguige_0_67872300_1487044329');if (count($_from)):
-    foreach ($_from AS $this->_var['spguige_0_67872300_1487044329']):
+                                <?php $_from = $this->_var['spguige']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'spguige_0_00397400_1487069257');if (count($_from)):
+    foreach ($_from AS $this->_var['spguige_0_00397400_1487069257']):
 ?>
                                   <tr class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pc-guige-class">
-                                    <td class="tab-shopsingle"><?php echo $this->_var['spguige_0_67872300_1487044329']['attr_name']; ?>:</th>
-                                    <td class="tab-shopsingle-right"><?php echo $this->_var['spguige_0_67872300_1487044329']['attr_value']; ?></td>
+                                    <td class="tab-shopsingle"><?php echo $this->_var['spguige_0_00397400_1487069257']['attr_name']; ?>:</th>
+                                    <td class="tab-shopsingle-right"><?php echo $this->_var['spguige_0_00397400_1487069257']['attr_value']; ?></td>
                                   </tr>
                                 <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
                             </table>
@@ -563,20 +571,20 @@ if ($this->_foreach['name']['total'] > 0):
       <h3 class="padding-top mabeylike">猜 你 喜 欢</h3>
       <div class="row padding-top">
         
-        <?php $_from = $this->_var['xh']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'xh_0_67929000_1487044329');if (count($_from)):
-    foreach ($_from AS $this->_var['xh_0_67929000_1487044329']):
+        <?php $_from = $this->_var['xh']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'xh_0_00425200_1487069257');if (count($_from)):
+    foreach ($_from AS $this->_var['xh_0_00425200_1487069257']):
 ?>
               <div class="col-lg-3 col-sm-6 mobile-indent">
                 <div class="shop-item">
                   <div class="shop-thumbnail">
-                    <a href="shop-single.php?id=<?php echo $this->_var['xh_0_67929000_1487044329']['goods_id']; ?><?php echo $this->_var['linestring2']; ?>" class="item-link"></a>
-                    <?php if ($this->_var['xh_0_67929000_1487044329']['attributeimg']): ?><img src="././admin/<?php echo $this->_var['xh_0_67929000_1487044329']['attributeimg']; ?>" alt="Shop item"><?php endif; ?>
+                    <a href="shop-single.php?id=<?php echo $this->_var['xh_0_00425200_1487069257']['goods_id']; ?><?php echo $this->_var['linestring2']; ?>" class="item-link"></a>
+                    <?php if ($this->_var['xh_0_00425200_1487069257']['attributeimg']): ?><img src="././admin/<?php echo $this->_var['xh_0_00425200_1487069257']['attributeimg']; ?>" alt="Shop item"><?php endif; ?>
                   </div>
                   <div class="shop-item-details">
-                    <h3 class="shop-item-title"><a href="shop-single.php?id=<?php echo $this->_var['xh_0_67929000_1487044329']['goods_id']; ?><?php echo $this->_var['linestring2']; ?>"><?php echo $this->_var['xh_0_67929000_1487044329']['goods_name']; ?></a></h3>
+                    <h3 class="shop-item-title"><a href="shop-single.php?id=<?php echo $this->_var['xh_0_00425200_1487069257']['goods_id']; ?><?php echo $this->_var['linestring2']; ?>"><?php echo $this->_var['xh_0_00425200_1487069257']['goods_name']; ?></a></h3>
                     <span class="shop-item-price">
                       <span class="old-price"></span>
-                      ￥<?php echo $this->_var['xh_0_67929000_1487044329']['attributeprice']; ?>
+                      ￥<?php echo $this->_var['xh_0_00425200_1487069257']['attributeprice']; ?>
                     </span>
                   </div>
                 </div>
